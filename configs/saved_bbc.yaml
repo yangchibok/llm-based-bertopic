@@ -1,0 +1,13 @@
+# Original saved embeddings in the pinned Python 3.8.19 environment; see read.md.
+extends: research.yaml
+execution_profile: notebook_2024
+experiment:
+  datasets: [bbc]
+  models: [falcon, llama2, llama3]
+metrics:
+  processes: 1
+bertopic:
+  verbose: true
+paths:
+  artifact_dir: artifacts/notebook_2024
+  run_dir: runs/bbc_2024

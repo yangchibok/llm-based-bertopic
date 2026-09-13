@@ -1,0 +1,26 @@
+# Original saved embeddings in the pinned Python 3.8.19 environment; see read.md.
+extends: research.yaml
+execution_profile: notebook_2024
+datasets:
+  imdb:
+    source: json
+    path: inputs/imdb_processed.json
+preprocessing:
+  mode: none  # The original notebook reads already-processed 50,000 strings.
+experiment:
+  datasets: [imdb]
+  models: [falcon, llama2, llama3]
+  topk_values: [10]
+dataset_overrides:
+  imdb:
+    umap:
+      random_state: 1042  # Current cell says 42; the saved outputs require 1042.
+hdbscan:
+  core_dist_n_jobs: 4  # Keep original default: changing to 1 changes this IMDB result.
+metrics:
+  processes: 1
+bertopic:
+  verbose: true
+paths:
+  artifact_dir: artifacts/notebook_2024
+  run_dir: runs/imdb_2024

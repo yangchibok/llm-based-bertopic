@@ -1,0 +1,14 @@
+# Original saved embeddings in the pinned Python 3.8.19 environment; see read.md.
+extends: research.yaml
+execution_profile: notebook_2024
+experiment:
+  datasets: [newsgroup20]
+  models: [llama2, llama3, falcon, distilbert]
+metrics:
+  # Same Gensim metric, with one worker to limit memory. Use -1 for notebook defaults.
+  processes: 1
+bertopic:
+  verbose: true
+paths:
+  artifact_dir: artifacts/notebook_2024
+  run_dir: runs/notebook_2024

@@ -1,0 +1,11 @@
+# Example for an externally named NG20/LLaMA3 array and its ordered processed texts.
+# For renamed ORIGINAL arrays in Python 3.8.19, change extends to saved_newsgroup20.yaml.
+extends: full.yaml
+experiment:
+  datasets: [newsgroup20]
+  models: [llama3]
+  topic_counts: [5]
+  topk_values: [10]
+paths:
+  artifact_dir: artifacts/custom_embeddings
+  run_dir: runs/custom_embeddings

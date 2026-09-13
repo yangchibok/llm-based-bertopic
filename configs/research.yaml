@@ -1,0 +1,202 @@
+seed: 1042
+datasets:
+  newsgroup20:
+    source: huggingface
+    id: xwjzds/20_newsgroups
+    revision: null
+    name: null
+    splits:
+    - train
+    text_column: text
+    max_documents: null
+  bbc:
+    source: huggingface
+    id: SetFit/bbc-news
+    revision: null
+    name: null
+    splits:
+    - train
+    - test
+    text_column: text
+    max_documents: null
+  imdb:
+    source: huggingface
+    id: stanfordnlp/imdb
+    revision: null
+    name: null
+    splits:
+    - unsupervised
+    text_column: text
+    max_documents: null
+experiment:
+  datasets:
+  - newsgroup20
+  - bbc
+  - imdb
+  models:
+  - sbert
+  - distilbert
+  - falcon
+  - llama2
+  - llama3
+  - lda
+  topic_counts:
+  - 5
+  - 10
+  - 15
+  - 20
+  - 25
+  - 30
+  - 35
+  - 40
+  - 45
+  - 50
+  topk_values:
+  - 10
+  - 20
+  - 30
+  save_assignments: false
+preprocessing:
+  mode: full
+  spacy_model: en_core_web_sm
+  allowed_postags:
+  - NOUN
+  - ADJ
+  - VERB
+  - ADV
+  batch_size: 64
+embeddings:
+  sbert:
+    model_id: sentence-transformers/all-mpnet-base-v2
+    revision: null
+    device: auto
+    dtype: auto
+    quantization: none
+    batch_size: 32
+    max_length: 384
+    pooling: sentence_transformer
+    normalize: false
+    padding: longest
+    pad_token_strategy: add_new
+    local_files_only: false
+  distilbert:
+    model_id: distilbert/distilbert-base-cased
+    revision: null
+    device: auto
+    dtype: auto
+    quantization: none
+    batch_size: 8
+    max_length: 512
+    pooling: masked_mean
+    normalize: true
+    padding: longest
+    pad_token_strategy: add_new
+    local_files_only: false
+  falcon:
+    model_id: tiiuae/falcon-7b
+    revision: null
+    device: auto
+    dtype: auto
+    quantization: none
+    batch_size: 4
+    max_length: 512
+    pooling: legacy_mean
+    normalize: false
+    padding: longest
+    pad_token_strategy: add_new
+    local_files_only: false
+  llama2:
+    model_id: meta-llama/Llama-2-7b-chat-hf
+    revision: null
+    device: auto
+    dtype: auto
+    quantization: none
+    batch_size: 4
+    max_length: 512
+    pooling: legacy_mean
+    normalize: false
+    padding: longest
+    pad_token_strategy: add_new
+    local_files_only: false
+  llama3:
+    model_id: meta-llama/Meta-Llama-3-8B
+    revision: null
+    device: auto
+    dtype: auto
+    quantization: none
+    batch_size: 4
+    max_length: 512
+    pooling: legacy_mean
+    normalize: false
+    padding: longest
+    pad_token_strategy: add_new
+    local_files_only: false
+umap:
+  n_neighbors: 5
+  n_components: 1
+  min_dist: 0.0
+  metric: cosine
+  random_state: 1042
+hdbscan:
+  min_cluster_size: 20
+  metric: euclidean
+  cluster_selection_method: eom
+  prediction_data: true
+vectorizer:
+  ngram_range:
+  - 1
+  - 2
+  stop_words: english
+  min_df: 2
+bertopic:
+  verbose: false
+  calculate_probabilities: false
+lda:
+  topk_values:
+  - 10
+  irbo_num_topics: -1
+  random_state: 1042
+  passes: 10
+  iterations: 50
+  chunksize: 2000
+  alpha: symmetric
+  eta: null
+metrics:
+  coherence: c_npmi
+  processes: 1
+  window_size: null
+  rbo_weight: 0.9
+  kl_epsilon: 1.0e-05
+  irbo_include_outliers: true
+  kl_include_outliers: true
+  lda_coherence_topn: 20
+paths:
+  artifact_dir: artifacts
+  cache_dir: artifacts/huggingface
+  run_dir: runs
+dataset_overrides:
+  bbc:
+    hdbscan:
+      min_cluster_size: 10
+  imdb:
+    umap:
+      n_neighbors: 10
+      random_state: 42
+    hdbscan:
+      min_cluster_size: 15
+model_overrides:
+  bbc:
+    falcon:
+      umap:
+        # Final BBC CSV uses 5; the notebook's currently visible cell says 10.
+        n_neighbors: 5
+    llama2:
+      umap:
+        n_neighbors: 5
+    llama3:
+      umap:
+        n_neighbors: 5
+  imdb:
+    sbert:
+      umap:
+        random_state: 1042

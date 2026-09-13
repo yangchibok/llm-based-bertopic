@@ -1,0 +1,16 @@
+extends: research.yaml
+experiment:
+  datasets:
+  - bbc
+  models:
+  - sbert
+  - lda
+  topic_counts:
+  - 5
+  topk_values:
+  - 10
+datasets:
+  bbc:
+    max_documents: 300
+lda:
+  passes: 2

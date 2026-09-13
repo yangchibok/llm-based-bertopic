@@ -1,0 +1,14 @@
+extends: research.yaml
+embeddings:
+  falcon:
+    device: cuda
+    quantization: 8bit
+    dtype: float16
+  llama2:
+    device: cuda
+    quantization: 8bit
+    dtype: float16
+  llama3:
+    device: cuda
+    quantization: 8bit
+    dtype: float16

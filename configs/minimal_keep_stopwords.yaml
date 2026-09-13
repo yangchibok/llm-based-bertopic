@@ -1,0 +1,6 @@
+# Level 1: basic cleanup; retain stopwords in embeddings, LDA, and topic words.
+extends: research.yaml
+preprocessing:
+  mode: minimal_keep_stopwords
+vectorizer:
+  stop_words: null

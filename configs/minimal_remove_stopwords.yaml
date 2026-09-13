@@ -1,0 +1,7 @@
+# Level 2: basic cleanup plus sklearn English stopword removal BEFORE embedding.
+# No lemmatization or POS filtering; applies equally to all five embeddings and LDA.
+extends: research.yaml
+preprocessing:
+  mode: minimal_remove_stopwords
+vectorizer:
+  stop_words: english
