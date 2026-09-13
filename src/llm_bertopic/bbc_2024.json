@@ -1,0 +1,43 @@
+{
+  "scope": "Original ordered documents, saved embedding arrays, and environment for bbc",
+  "raw_count": 2225,
+  "processed_count": 2225,
+  "raw_texts_sha256": "48b66aa713a81aa9cad115be146e0213cf0472a36d4c8e3d3e99c0524757bedb",
+  "processed_texts_sha256": "d18ea0310e5380b390046bc13b4ba51f3f40549a924a44a38ad47c3fac14275c",
+  "embeddings": {
+    "falcon": {
+      "source_path": "finish/bbc_embeddings_falcon.pkl",
+      "filename": "bbc_embeddings_falcon.pkl",
+      "pickle_sha256": "7631143db466c6588e838c5d5713543ae78cd07c40d9e9a79d25bb9de56585d5",
+      "shape": [
+        2225,
+        4544
+      ],
+      "dtype": "float16",
+      "matrix_sha256": "297fdab4059b2f64aeb7a6c504f869fcc21a89f4ffae1044156645b5a1017d75"
+    },
+    "llama2": {
+      "source_path": "finish/bbc_embeddings_llama2.pkl",
+      "filename": "bbc_embeddings_llama2.pkl",
+      "pickle_sha256": "979c6d5b288c62e78d429bc435cf24a3a606333783311b8bc326f463072ceeb3",
+      "shape": [
+        2225,
+        4096
+      ],
+      "dtype": "float16",
+      "matrix_sha256": "4d4931b500796012b235f38a0a4944cade66ac61a091398918d8a025efc9798f"
+    },
+    "llama3": {
+      "source_path": "finish/bbc_embeddings_llama3.pkl",
+      "filename": "bbc_embeddings_llama3.pkl",
+      "pickle_sha256": "57c792e93dbaaf93d3a2a3cbac665e6190fb8827ebdfb2fefe19a622a5f9d01e",
+      "shape": [
+        2225,
+        4096
+      ],
+      "dtype": "float16",
+      "matrix_sha256": "b93c44b29abe1436bb19ae49d87f5b76c5ec74cedec3e584a5f06fab8d097b99"
+    }
+  },
+  "filename_note": "filename and source_path record names chosen by the author for the original experiments. They are not required names for newly generated embeddings. Generate new arrays with embed, or use import-embeddings --array for a custom filename. Historical hashes apply only to the original arrays."
+}

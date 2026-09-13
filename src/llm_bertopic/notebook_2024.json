@@ -1,0 +1,31 @@
+{
+  "scope": "Shared historical Python, package, and NLTK stopword environment",
+  "python": "3.8.19",
+  "packages": {
+    "numpy": "1.23.0",
+    "scipy": "1.10.1",
+    "pandas": "2.0.3",
+    "scikit-learn": "1.1.0",
+    "bertopic": "0.16.0",
+    "umap-learn": "0.5.6",
+    "hdbscan": "0.8.36",
+    "gensim": "4.2.0",
+    "octis": "1.13.1",
+    "spacy": "3.7.5",
+    "en-core-web-sm": "3.7.1",
+    "nltk": "3.8.1",
+    "torch": "2.3.1",
+    "transformers": "4.41.2",
+    "sentence-transformers": "3.0.1",
+    "numba": "0.58.1",
+    "llvmlite": "0.41.1",
+    "pynndescent": "0.5.12",
+    "joblib": "1.4.2",
+    "threadpoolctl": "3.5.0",
+    "datasets": "2.20.0",
+    "huggingface-hub": "0.23.3",
+    "tokenizers": "0.19.1",
+    "PyYAML": "6.0.1"
+  },
+  "stopwords_sha256": "964481517f80313c3358469c5654208ccbab41a278e9bcea227710713e191368"
+}

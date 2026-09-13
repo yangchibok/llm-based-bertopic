@@ -1,0 +1,54 @@
+{
+  "scope": "Original ordered 20 Newsgroups documents and saved embedding arrays",
+  "raw_count": 11314,
+  "processed_count": 10975,
+  "raw_texts_sha256": "fcba84c590c48b5eca53851a3fead0244794138908fb6fd91e508bfa2c2992c9",
+  "processed_texts_sha256": "39edef91703f304b42e9dc653274e0a2d6098975ddcd863c7f540518970b7620",
+  "embeddings": {
+    "distilbert": {
+      "source_path": "newgroup20/ng_embeddings_distilbert.pkl",
+      "filename": "ng_embeddings_distilbert.pkl",
+      "pickle_sha256": "5f7eb2e040691a9af69df4fb0e25856671cae96ae6f31ddd5cdc5a171753fa00",
+      "dtype": "float32",
+      "shape": [
+        10975,
+        768
+      ],
+      "matrix_sha256": "4a8b412acc59a4ba3daeba5444e6917f9f8a3b7686bba57dd46772ffffc3836b"
+    },
+    "llama2": {
+      "source_path": "finish/ng_embeddings_llama2_new.pkl",
+      "filename": "ng_embeddings_llama2_new.pkl",
+      "pickle_sha256": "c418abd7ee320ab5c2105c7a8986d82f823fb5e7bca0508c75532b48d8752db9",
+      "dtype": "float16",
+      "shape": [
+        10975,
+        4096
+      ],
+      "matrix_sha256": "c3ca658f6d7b3b4d64057895b241331fb77425b27d85998ad5a53abb62a92bd3"
+    },
+    "llama3": {
+      "source_path": "finish/ng_embeddings_llama3_new.pkl",
+      "filename": "ng_embeddings_llama3_new.pkl",
+      "pickle_sha256": "e5522efbeed5e92651fd3f5a9dfd1ee84659bfb1462b1d7148c63a520c6b6d53",
+      "dtype": "float16",
+      "shape": [
+        10975,
+        4096
+      ],
+      "matrix_sha256": "a3d8ec594b53730941d167b03087071d0b7e05874060b13ec9f8abe08abf1583"
+    },
+    "falcon": {
+      "source_path": "finish/ng_embeddings_falcon_new.pkl",
+      "filename": "ng_embeddings_falcon_new.pkl",
+      "pickle_sha256": "b5dbbad68d9161d66e24c0982b109d152f81f11a0cc88fde15ed633b42e29c54",
+      "dtype": "float16",
+      "shape": [
+        10975,
+        4544
+      ],
+      "matrix_sha256": "8b7ee0ae6c1fd3e0a775743db2cfcf084a0bca108b44a3ebf75e4c0b6ef0eeba"
+    }
+  },
+  "filename_note": "filename and source_path record names chosen by the author for the original experiments. They are not required names for newly generated embeddings. Generate new arrays with embed, or use import-embeddings --array for a custom filename. Historical hashes apply only to the original arrays."
+}

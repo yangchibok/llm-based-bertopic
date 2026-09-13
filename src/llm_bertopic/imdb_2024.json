@@ -1,0 +1,45 @@
+{
+  "scope": "Original ordered documents, saved embedding arrays, and environment for imdb",
+  "input_kind": "preprocessed",
+  "raw_count": 50000,
+  "processed_count": 50000,
+  "raw_texts_sha256": "8670c9fcfdb147746ac92c7d0361477f05db2ec5f60c39ff2b713ba490d45d2c",
+  "processed_texts_sha256": "8670c9fcfdb147746ac92c7d0361477f05db2ec5f60c39ff2b713ba490d45d2c",
+  "original_processed_pickle_sha256": "004ff8dbac58727845c2ae0e162eabcc33a358439b25ca527007f0bac2aae7fb",
+  "embeddings": {
+    "falcon": {
+      "source_path": "finish/imdb_embeddings_falcon.pkl",
+      "filename": "imdb_embeddings_falcon.pkl",
+      "pickle_sha256": "f7874b60e3d4970fcf8c513f5b11b8446e046779064588fbd51ce228909ddfe9",
+      "shape": [
+        50000,
+        4544
+      ],
+      "dtype": "float16",
+      "matrix_sha256": "43dabbd4d16b75338dc6633a9580472565b04c9571581a8af209a7592cea4f6b"
+    },
+    "llama2": {
+      "source_path": "finish/imdb_embeddings_llama2.pkl",
+      "filename": "imdb_embeddings_llama2.pkl",
+      "pickle_sha256": "78ba697f07aa80b509a64de84088b1a491afdaccbb8234481b9f537b27935e14",
+      "shape": [
+        50000,
+        4096
+      ],
+      "dtype": "float16",
+      "matrix_sha256": "68395a4ba07c3c3fc6a01dfbc1570997a8bf007db94992f5bc2d7dfc85d66dc8"
+    },
+    "llama3": {
+      "source_path": "finish/imdb_embeddings_llama3.pkl",
+      "filename": "imdb_embeddings_llama3.pkl",
+      "pickle_sha256": "a6f6c828aba7a7a3a5e64d187afb02b5b24013a882976d34094f8c32f9c2627a",
+      "shape": [
+        50000,
+        4096
+      ],
+      "dtype": "float16",
+      "matrix_sha256": "3f430abe1c4480bb8d399cadf51cd25acf464d5e226555f116bc21d1cf64aacf"
+    }
+  },
+  "filename_note": "filename and source_path record names chosen by the author for the original experiments. They are not required names for newly generated embeddings. Generate new arrays with embed, or use import-embeddings --array for a custom filename. Historical hashes apply only to the original arrays."
+}
