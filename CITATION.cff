@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite the associated article."
+type: software
+title: "LLM-based BERTopic"
+version: 0.3.1
+authors:
+  - family-names: Yang
+    given-names: Chibok
+  - family-names: Kim
+    given-names: Yangsok
+preferred-citation:
+  type: article
+  title: "Enhancing topic coherence and diversity in document embeddings using LLMs: A focus on BERTopic"
+  authors:
+    - family-names: Yang
+      given-names: Chibok
+    - family-names: Kim
+      given-names: Yangsok
+  journal: "Expert Systems with Applications"
+  volume: "281"
+  start: "127517"
+  year: 2025
+  doi: "10.1016/j.eswa.2025.127517"

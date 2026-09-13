@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "llm-based-bertopic"
+version = "0.3.1"
+description = "Configurable BERTopic and LDA experiments on 20 Newsgroups, BBC News and IMDB"
+authors = [{name = "Chibok Yang"}, {name = "Yangsok Kim"}]
+readme = "README.md"
+requires-python = ">=3.8,<3.13"
+dependencies = ["PyYAML>=6,<7", "numpy>=1.23,<2", "scipy>=1.10,<2"]
+
+[project.optional-dependencies]
+standard = [
+  "numpy>=1.26,<2", "pandas>=2.2,<3", "scipy>=1.13,<2",
+  "scikit-learn>=1.6,<1.8", "bertopic>=0.17.4,<0.18",
+  "umap-learn>=0.5.7,<0.6", "hdbscan>=0.8.40,<0.9",
+  "gensim>=4.4,<5", "sentence-transformers>=3.4,<4",
+  "transformers>=4.48,<4.50", "torch>=2.6,<2.7",
+  "accelerate>=1.2,<2", "datasets>=3,<5", "huggingface-hub>=0.28,<1",
+  "spacy>=3.8,<3.9", "nltk>=3.9,<4", "PyYAML>=6,<7", "tqdm>=4.66,<5"
+]
+
+notebook2024 = [
+  "numpy==1.23.0", "scipy==1.10.1", "pandas==2.0.3", "scikit-learn==1.1.0",
+  "bertopic==0.16.0", "umap-learn==0.5.6", "hdbscan==0.8.36",
+  "gensim==4.2.0", "octis==1.13.1", "spacy==3.7.5", "nltk==3.8.1",
+  "torch==2.3.1", "transformers==4.41.2", "sentence-transformers==3.0.1",
+  "numba==0.58.1", "llvmlite==0.41.1", "pynndescent==0.5.12",
+  "joblib==1.4.2", "threadpoolctl==3.5.0", "datasets==2.20.0",
+  "huggingface-hub==0.23.3", "tokenizers==0.19.1", "PyYAML==6.0.1"
+]
+notebooks = ["jupyterlab>=4,<5", "ipykernel>=6,<7", "matplotlib>=3.8,<4"]
+gpu = ["bitsandbytes>=0.45,<0.49"]
+
+[project.urls]
+Paper = "https://doi.org/10.1016/j.eswa.2025.127517"
+
+[project.scripts]
+llm-bertopic = "llm_bertopic.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+llm_bertopic = ["notebook_2024.json", "ng20_2024.json", "bbc_2024.json", "imdb_2024.json"]

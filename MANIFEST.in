@@ -1,0 +1,9 @@
+include README.md
+include read.md
+include CITATION.cff
+include .gitignore
+include .gitattributes
+include constraints-tested.txt
+include constraints-notebook2024.txt
+recursive-include configs *.yaml
+recursive-include notebooks *.ipynb
